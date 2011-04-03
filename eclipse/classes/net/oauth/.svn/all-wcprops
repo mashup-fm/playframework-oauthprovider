@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1216/code/java/core/commons/src/main/java/net/oauth
+END
+OAuthException.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1082/code/java/core/commons/src/main/java/net/oauth/OAuthException.java
+END
+OAuth.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/1202/code/java/core/commons/src/main/java/net/oauth/OAuth.java
+END
+OAuthProblemException.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/1213/code/java/core/commons/src/main/java/net/oauth/OAuthProblemException.java
+END
+ParameterStyle.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1216/code/java/core/commons/src/main/java/net/oauth/ParameterStyle.java
+END
+OAuthAccessor.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/1032/code/java/core/commons/src/main/java/net/oauth/OAuthAccessor.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/1082/code/java/core/commons/src/main/java/net/oauth/package-info.java
+END
+OAuthMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/1211/code/java/core/commons/src/main/java/net/oauth/OAuthMessage.java
+END
+consumer.properties.sample
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/1032/code/java/core/commons/src/main/java/net/oauth/consumer.properties.sample
+END
+ConsumerProperties.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1032/code/java/core/commons/src/main/java/net/oauth/ConsumerProperties.java
+END
+OAuthServiceProvider.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/1204/code/java/core/commons/src/main/java/net/oauth/OAuthServiceProvider.java
+END
+OAuthConsumer.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/1206/code/java/core/commons/src/main/java/net/oauth/OAuthConsumer.java
+END

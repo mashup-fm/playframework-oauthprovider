@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/1082/code/java/core/commons/src/main/java/net/oauth/signature/pem
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/1082/code/java/core/commons/src/main/java/net/oauth/signature/pem/package-info.java
+END
+PEMReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/1032/code/java/core/commons/src/main/java/net/oauth/signature/pem/PEMReader.java
+END
+PKCS1EncodedKeySpec.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/1032/code/java/core/commons/src/main/java/net/oauth/signature/pem/PKCS1EncodedKeySpec.java
+END
+DerParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/1032/code/java/core/commons/src/main/java/net/oauth/signature/pem/DerParser.java
+END
+Asn1Object.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/1032/code/java/core/commons/src/main/java/net/oauth/signature/pem/Asn1Object.java
+END

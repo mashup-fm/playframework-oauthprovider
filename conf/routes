@@ -8,5 +8,14 @@ GET     /                                       Application.index
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public
 
+# Mashup.fm OAuth Provider Service
+*		/oauth/requestToken						RequestToken.request
+*		/oauth/request_token					RequestToken.request
+*		/oauth/access_token						AccessToken.request
+*		/oauth/authorize						Authorization.request
+
+# CRUD
+*      /admin              module:crud
+
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}

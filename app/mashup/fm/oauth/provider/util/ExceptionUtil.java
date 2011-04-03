@@ -1,21 +1,21 @@
 /** 
-* Copyright 2011 The Apache Software Foundation
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*     http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-* 
-* @author Felipe Oliveira (http://mashup.fm)
-* 
-*/
+ * Copyright 2011 The Apache Software Foundation
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ * @author Felipe Oliveira (http://mashup.fm)
+ * 
+ */
 package mashup.fm.oauth.provider.util;
 
 import java.io.ByteArrayOutputStream;
@@ -31,8 +31,9 @@ public abstract class ExceptionUtil {
 
 	/**
 	 * Run exception.
-	 *
-	 * @param t the t
+	 * 
+	 * @param t
+	 *            the t
 	 */
 	public static void runException(Throwable t) {
 		Logger.error(getStackTrace(t));
@@ -41,8 +42,9 @@ public abstract class ExceptionUtil {
 
 	/**
 	 * Gets the stack trace.
-	 *
-	 * @param exception the exception
+	 * 
+	 * @param exception
+	 *            the exception
 	 * @return the stack trace
 	 */
 	public static String getStackTrace(Exception exception) {
@@ -51,8 +53,9 @@ public abstract class ExceptionUtil {
 
 	/**
 	 * Gets the stack trace.
-	 *
-	 * @param exception the exception
+	 * 
+	 * @param exception
+	 *            the exception
 	 * @return the stack trace
 	 */
 	public static String getStackTrace(Throwable exception) {
@@ -61,9 +64,11 @@ public abstract class ExceptionUtil {
 
 	/**
 	 * Gets the stack trace.
-	 *
-	 * @param title the title
-	 * @param exception the exception
+	 * 
+	 * @param title
+	 *            the title
+	 * @param exception
+	 *            the exception
 	 * @return the stack trace
 	 */
 	public static String getStackTrace(String title, Exception exception) {
@@ -72,9 +77,11 @@ public abstract class ExceptionUtil {
 
 	/**
 	 * Gets the stack trace.
-	 *
-	 * @param title the title
-	 * @param exception the exception
+	 * 
+	 * @param title
+	 *            the title
+	 * @param exception
+	 *            the exception
 	 * @return the stack trace
 	 */
 	public static String getStackTrace(String title, Throwable exception) {

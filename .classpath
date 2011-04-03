@@ -2,11 +2,11 @@
 <classpath>
 	<classpathentry excluding="views/**" kind="src" path="app"/>
 	<classpathentry kind="src" path="test"/>
+	<classpathentry kind="src" path="crud"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/Users/felipera/Downloads/play-1.1/framework/play.jar" sourcepath="/Users/felipera/Downloads/play-1.1/framework"/>
+	<classpathentry kind="lib" path="/Users/felipera/Downloads/play-1.1/framework/play.jar" sourcepath="/Users/felipera/Downloads/play-1.1/framework" />
 	<classpathentry kind="lib" path="/Users/felipera/development/playframework-oauthprovider/lib/commons-codec-1.4.jar"/>
 	<classpathentry kind="lib" path="/Users/felipera/development/playframework-oauthprovider/lib/commons-logging-1.1.1.jar"/>
-	<classpathentry kind="lib" path="/Users/felipera/development/playframework-oauthprovider/lib/oauth-20100601.jar"/>
 	<classpathentry kind="lib" path="/Users/felipera/development/playframework-oauthprovider/lib/oauth-httpclient3-20100601.jar"/>
 	<classpathentry kind="lib" path="/Users/felipera/Downloads/play-1.1/framework/lib/activation-1.1.1.jar"/>
 	<classpathentry kind="lib" path="/Users/felipera/Downloads/play-1.1/framework/lib/antlr-2.7.6.jar"/>
@@ -53,10 +53,11 @@
 	<classpathentry kind="lib" path="/Users/felipera/Downloads/play-1.1/framework/lib/netty-3.2.2.Final.jar"/>
 	<classpathentry kind="lib" path="/Users/felipera/Downloads/play-1.1/framework/lib/org.eclipse.jdt.core_3.6.0.jar"/>
 	<classpathentry kind="lib" path="/Users/felipera/Downloads/play-1.1/framework/lib/oval-1.50.jar"/>
-	<classpathentry kind="lib" path="/Users/felipera/Downloads/play-1.1/framework/lib/provided-servlet-2.5.jar" sourcepath="/Users/felipera/.m2/repository/org/apache/geronimo/specs/geronimo-servlet_2.5_spec/1.2/geronimo-servlet_2.5_spec-1.2-sources.jar"/>
+	<classpathentry kind="lib" path="/Users/felipera/Downloads/play-1.1/framework/lib/provided-servlet-2.5.jar"/>
 	<classpathentry kind="lib" path="/Users/felipera/Downloads/play-1.1/framework/lib/signpost-core-1.2.jar"/>
 	<classpathentry kind="lib" path="/Users/felipera/Downloads/play-1.1/framework/lib/slf4j-api-1.6.1.jar"/>
 	<classpathentry kind="lib" path="/Users/felipera/Downloads/play-1.1/framework/lib/slf4j-log4j12-1.6.1.jar"/>
 	<classpathentry kind="lib" path="/Users/felipera/Downloads/play-1.1/framework/lib/snakeyaml-1.6.jar"/>
+	
 	<classpathentry kind="output" path="eclipse/classes"/>
 </classpath>
