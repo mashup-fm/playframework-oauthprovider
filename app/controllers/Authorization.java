@@ -31,6 +31,7 @@ import models.OAuthAccessor;
 import net.oauth.OAuth;
 import net.oauth.OAuthMessage;
 import play.mvc.Controller;
+import play.mvc.With;
 import play.mvc.Http.Request;
 import play.mvc.Http.Response;
 
@@ -38,6 +39,7 @@ import play.mvc.Http.Response;
 /**
  * The Class Authorization.
  */
+//@With(Secure.class)
 public class Authorization extends Controller {
 
 	/**
@@ -48,7 +50,7 @@ public class Authorization extends Controller {
 	 * @param response
 	 *            the response
 	 */
-	public static void confirm() {
+	public static void confirm() throws Throwable {
 
 		try {
 			OAuthMessage requestMessage = MashupOAuthUtil.getMessage(request,
@@ -78,7 +80,7 @@ public class Authorization extends Controller {
 	 * @param response
 	 *            the response
 	 */
-	public static void request() {
+	public static void request() throws Throwable {
 
 		try {
 			OAuthMessage requestMessage = MashupOAuthUtil.getMessage(request,
@@ -87,13 +89,12 @@ public class Authorization extends Controller {
 			OAuthAccessor accessor = MashupOAuthProvider
 					.getAccessor(requestMessage);
 
-			// String userId = request.params.get("userId");
-			// if (userId == null) {
-			// sendToAuthorizePage(request, response, accessor);
-			// }
+			if(!Security.isConnected()) {
+				sendToAuthorizePage(request, response, accessor);
+			}
 
 			// set userId in accessor and mark it as authorized
-			accessor = MashupOAuthProvider.markAsAuthorized(accessor);
+			accessor = MashupOAuthProvider.markAsAuthorized(accessor, Security.connected());
 
 			returnToConsumer(request, response, accessor);
 
@@ -117,7 +118,7 @@ public class Authorization extends Controller {
 	 *             the servlet exception
 	 */
 	private static void sendToAuthorizePage(Request request, Response response,
-			OAuthAccessor accessor) throws IOException, ServletException {
+			OAuthAccessor accessor) throws IOException, ServletException, Throwable {
 		String callback = request.params.get("oauth_callback");
 		if (callback == null || callback.length() <= 0) {
 			callback = "none";
@@ -126,7 +127,7 @@ public class Authorization extends Controller {
 		request.params.put("CONS_DESC", consumer_description);
 		request.params.put("CALLBACK", callback);
 		request.params.put("TOKEN", accessor.requestToken);
-		Authorization.request();
+		Secure.login();
 	}
 
 	/**
@@ -158,7 +159,7 @@ public class Authorization extends Controller {
 			response.setContentTypeIfNotSet(("text/plain"));
 			PrintWriter out = new PrintWriter(response.out);
 			out.println("You have successfully authorized '"
-					+ accessor.consumer.description
+					+ accessor.consumer.name
 					+ "'. Please close this browser window and click continue"
 					+ " in the client.");
 			out.close();

@@ -2,7 +2,7 @@
 <classpath>
 	<classpathentry excluding="views/**" kind="src" path="app"/>
 	<classpathentry kind="src" path="test"/>
-	<classpathentry kind="src" path="crud"/>
+	<classpathentry kind="src" path="secure"/><classpathentry kind="src" path="crud"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="/Users/felipera/Downloads/play-1.1/framework/play.jar" sourcepath="/Users/felipera/Downloads/play-1.1/framework" />
 	<classpathentry kind="lib" path="/Users/felipera/development/playframework-oauthprovider/lib/commons-codec-1.4.jar"/>

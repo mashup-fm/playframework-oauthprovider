@@ -22,6 +22,7 @@ import javax.persistence.Entity;
 
 import play.data.validation.Required;
 import play.db.jpa.Model;
+import controllers.CRUD.Hidden;
 
 /**
  * The Class OAuthServiceProvider.
@@ -33,6 +34,9 @@ public class OAuthServiceProvider extends Model {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
+	@Required
+	public String name;
 
 	/** The request token url. */
 	@Required
@@ -47,6 +51,7 @@ public class OAuthServiceProvider extends Model {
 	public String accessTokenURL;
 
 	/** The base url. */
+	@Hidden
 	public String baseURL;
 
 	/**
@@ -118,6 +123,10 @@ public class OAuthServiceProvider extends Model {
 			return false;
 		}
 		return true;
+	}
+	
+	public String toString() {
+		return name;
 	}
 
 }

@@ -2,9 +2,6 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# Home page
-GET     /                                       Application.index
-
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public
 
@@ -12,10 +9,17 @@ GET     /public/                                staticDir:public
 *		/oauth/requestToken						RequestToken.request
 *		/oauth/request_token					RequestToken.request
 *		/oauth/access_token						AccessToken.request
-*		/oauth/authorize						Authorization.request
+*		/oauth/accessToken						AccessToken.request
+*		/oauth/authorize						Authorization.confirm
+*		/oauth/authRequest						Authorization.request
+*		/oauth/auth_request						Authorization.request
+*		/echo									Echo.echo
 
 # CRUD
-*      /admin              module:crud
+#*      /admin              module:crud
+
+*		/admin				Admin.index
+*		/					Admin.index
 
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}

@@ -23,6 +23,7 @@ import javax.persistence.ManyToOne;
 
 import play.data.validation.Required;
 import play.db.jpa.Model;
+import controllers.CRUD.Hidden;
 
 /**
  * The Class OAuthConsumer.
@@ -48,9 +49,11 @@ public class OAuthConsumer extends Model {
 	public static final String ACCESSOR_SECRET = "oauth_accessor_secret";
 
 	/** The name. */
+	@Required
 	public String name;
 
 	/** The description. */
+	@Required
 	public String description;
 
 	/** The callback url. */
@@ -66,15 +69,23 @@ public class OAuthConsumer extends Model {
 
 	/** The service provider. */
 	@ManyToOne
+	@Required
 	public OAuthServiceProvider serviceProvider;
+	
+	@ManyToOne
+	@Required
+	public User user;
 
 	/** The http method. */
+	@Hidden
 	public String httpMethod;
 
 	/** The signature method. */
+	@Hidden
 	public String signatureMethod;
 
 	/** The x509 certificate. */
+	@Hidden
 	public String x509Certificate;
 
 	/**
@@ -93,14 +104,12 @@ public class OAuthConsumer extends Model {
 		this.serviceProvider = serviceProvider;
 	}
 
-	/*
-	 * private final Map<String, Object> properties = new HashMap<String,
-	 * Object>();
-	 * 
-	 * public Object getProperty(String name) { return properties.get(name); }
-	 * 
-	 * public void setProperty(String name, Object value) { properties.put(name,
-	 * value); }
-	 */
+	public String toString() {
+		return name;
+	}
+	
+	public static OAuthConsumer findByUserId(String id) {
+		return OAuthConsumer.find("user.id = ?", id).first();
+	}
 
 }

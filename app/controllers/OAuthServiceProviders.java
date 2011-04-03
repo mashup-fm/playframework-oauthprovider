@@ -21,6 +21,6 @@ package controllers;
 /**
  * The Class OAuthServiceProviders.
  */
-public class OAuthServiceProviders extends CRUD {
+public class OAuthServiceProviders extends Admin {
 
 }

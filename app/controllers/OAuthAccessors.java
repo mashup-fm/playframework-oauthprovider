@@ -21,6 +21,6 @@ package controllers;
 /**
  * The Class OAuthAccessors.
  */
-public class OAuthAccessors extends CRUD {
+public class OAuthAccessors extends Admin {
 
 }

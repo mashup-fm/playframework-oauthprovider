@@ -1,3 +1,28 @@
 # You can specialize this file for each language.
 # For example, for French create a messages.fr file
 #
+
+requestTokenURL=Request Token URL
+description=Description
+requestToken=Request Token
+userName=User Name
+signatureMethod=Signature Method
+x509Certificate=X509 Certificate
+authorized=Authorized
+httpMethod=Http Method
+baseURL=Base URL
+isAdmin=Is Admin
+userAuthorizationURL=User Authorization URL
+willBeSaved=Will Be Saved
+accessTokenURL=Access Token URL
+consumerKey=Consumer Key
+accessToken=Access Token
+name=Name
+tokenSecret=Token Secret
+avoidCascadeSaveLoops=Avoid Cascade Save Loops
+callbackURL=Callback URL
+serviceProvider=Service Provider
+id=Id
+consumer=Consumer
+password=Password
+consumerSecret=Consumer Secret

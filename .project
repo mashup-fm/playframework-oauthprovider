@@ -15,7 +15,10 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.playframework.playclipse.playNature</nature>
 	</natures>
-	<linkedResources><link><name>crud</name><type>2</type><location>/Users/felipera/Downloads/play-1.1/modules/crud/app</location></link>
+	<linkedResources><link><name>secure</name><type>2</type><location>/Users/felipera/Downloads/play-1.1/modules/secure/app</location></link>
+<link><name>conf/secure</name><type>2</type><location>/Users/felipera/Downloads/play-1.1/modules/secure/conf</location></link>
+<link><name>public/secure</name><type>2</type><location>/Users/felipera/Downloads/play-1.1/modules/secure/public</location></link>
+<link><name>crud</name><type>2</type><location>/Users/felipera/Downloads/play-1.1/modules/crud/app</location></link>
 <link><name>conf/crud</name><type>2</type><location>/Users/felipera/Downloads/play-1.1/modules/crud/conf</location></link>
 <link><name>public/crud</name><type>2</type><location>/Users/felipera/Downloads/play-1.1/modules/crud/public</location></link>
 </linkedResources>

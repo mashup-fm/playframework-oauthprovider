@@ -21,6 +21,6 @@ package controllers;
 /**
  * The Class OAuthConsumers.
  */
-public class OAuthConsumers extends CRUD {
+public class OAuthConsumers extends Admin {
 
 }

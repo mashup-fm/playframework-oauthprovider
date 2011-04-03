@@ -1,0 +1,13 @@
+# Test data
+
+User(admin):
+    userName:       admin
+    password:       admin
+    name:           OAuth Administrator
+    isAdmin:        true
+    
+User(joe):
+    userName:       joe
+    password:       joe
+    name:           Joe
+    isAdmin:        false

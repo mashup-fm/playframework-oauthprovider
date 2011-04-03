@@ -51,71 +51,6 @@ public class MashupOAuthProvider {
 	/** The Constant VALIDATOR. */
 	public static final MashupOAuthValidator VALIDATOR = new MashupSimpleOAuthValidator();
 
-	/** The Constant ALL_CONSUMERS. */
-	// private static final Map<String, OAuthConsumer> ALL_CONSUMERS =
-	// Collections.synchronizedMap(new HashMap<String, OAuthConsumer>(10));
-
-	/** The Constant ALL_TOKENS. */
-	// private static final Collection<OAuthAccessor> ALL_TOKENS = new
-	// HashSet<OAuthAccessor>();
-
-	/** The consumer properties. */
-	private static Properties consumerProperties = null;
-
-	/**
-	 * Load consumers.
-	 * 
-	 * @param config
-	 *            the config
-	 * @throws IOException
-	 *             Signals that an I/O exception has occurred.
-	 */
-	public static synchronized void loadConsumers(ServletConfig config)
-			throws IOException {
-		Properties p = consumerProperties;
-		if (p == null) {
-			p = new Properties();
-			String resourceName = "/"
-					+ MashupOAuthProvider.class.getPackage().getName()
-							.replace(".", "/") + "/provider.properties";
-			URL resource = MashupOAuthProvider.class.getClassLoader()
-					.getResource(resourceName);
-			if (resource == null) {
-				throw new IOException("resource not found: " + resourceName);
-			}
-			InputStream stream = resource.openStream();
-			try {
-				p.load(stream);
-			} finally {
-				stream.close();
-			}
-		}
-		consumerProperties = p;
-
-		// for each entry in the properties file create a OAuthConsumer
-		for (Map.Entry prop : p.entrySet()) {
-			String consumer_key = (String) prop.getKey();
-			// make sure it's key not additional properties
-			if (!consumer_key.contains(".")) {
-				String consumer_secret = (String) prop.getValue();
-				if (consumer_secret != null) {
-					String consumer_description = p.getProperty(consumer_key
-							+ ".description");
-					String consumer_callback_url = p.getProperty(consumer_key
-							+ ".callbackURL");
-					// Create OAuthConsumer w/ key and secret
-					OAuthConsumer consumer = new OAuthConsumer(
-							consumer_callback_url, consumer_key,
-							consumer_secret, null);
-					consumer.name = consumer_key;
-					consumer.description = consumer_description;
-					consumer.create();
-				}
-			}
-		}
-
-	}
-
 	/**
 	 * Gets the consumer.
 	 * 
@@ -134,23 +69,6 @@ public class MashupOAuthProvider {
 		String consumer_key = requestMessage.getConsumerKey();
 		OAuthConsumer consumer = OAuthConsumer.find("consumerKey", consumer_key)
 				.first();
-
-		// String mockConfig =
-		// Play.configuration.getProperty("oauthprovider.mock");
-		/*
-		 * String mockConfig = "true"; if ( mockConfig != null &&
-		 * Boolean.valueOf(mockConfig) ) { // OAuthConsumer(java.lang.String
-		 * callbackURL, java.lang.String consumerKey, java.lang.String
-		 * consumerSecret, net.oauth.OAuthServiceProvider serviceProvider)
-		 * String callbackUrl = ""; String consumerKey = ""; String
-		 * consumerSecret = ""; String requestTokenUrl = ""; String
-		 * userAuthorizationUrl = ""; String accessTokenUrl = "";
-		 * OAuthServiceProvider serviceProvider = new
-		 * OAuthServiceProvider(requestTokenUrl, userAuthorizationUrl,
-		 * accessTokenUrl); consumer = new OAuthConsumer( callbackUrl,
-		 * consumerKey, consumerSecret, serviceProvider );
-		 * consumer.validateAndSave(); }
-		 */
 
 		if (consumer == null) {
 			Logger.error("Invalid Consumer Key: " + consumer_key);
@@ -204,11 +122,11 @@ public class MashupOAuthProvider {
 	 *             the o auth exception
 	 */
 	public static synchronized OAuthAccessor markAsAuthorized(
-			OAuthAccessor accessor) throws OAuthException {
+			OAuthAccessor accessor, String userId) throws OAuthException {
 		Logger.info("Mark as Authorized: %s", accessor);
 
-		// OAuthConsumer consumer = OAuthConsumer.findById(userId);
-		// accessor.consumer = consumer;
+		OAuthConsumer consumer = OAuthConsumer.findByUserId(userId);
+		accessor.consumer = consumer;
 		accessor.authorized = new Date();
 		return accessor.save();
 	}
@@ -226,7 +144,7 @@ public class MashupOAuthProvider {
 		Logger.info("Generate Request Token: %s", accessor);
 
 		// generate oauth_token and oauth_secret
-		String consumer_key = accessor.consumer.name;
+		String consumer_key = accessor.consumer.consumerKey;
 		// generate token and secret based on consumer_key
 
 		// for now use md5 of name + current time as token
@@ -260,7 +178,7 @@ public class MashupOAuthProvider {
 		Logger.info("Generate Access Token: %s", accessor);
 
 		// generate oauth_token and oauth_secret
-		String consumer_key = accessor.consumer.name;
+		String consumer_key = accessor.consumer.consumerKey;
 		// generate token and secret based on consumer_key
 
 		// for now use md5 of name + current time as token

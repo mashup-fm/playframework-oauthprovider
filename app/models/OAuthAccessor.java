@@ -34,6 +34,7 @@ import net.oauth.OAuthException;
 import net.oauth.OAuthMessage;
 import play.data.validation.Required;
 import play.db.jpa.Model;
+import controllers.CRUD.Hidden;
 
 /**
  * Properties of one User of an OAuthConsumer. Properties may be added freely,
@@ -68,6 +69,7 @@ public class OAuthAccessor extends Model implements Cloneable, Serializable {
 	public Date authorized;
 
 	/** The http method. */
+	@Hidden
 	private String httpMethod;
 
 	/**
